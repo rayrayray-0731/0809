@@ -489,7 +489,7 @@ button{font-family:inherit;cursor:pointer;border:none;background:none}
       <p class="section-desc">扫码添加微信，开启合作交流</p>
     </div>
     <div class="contact-card reveal">
-      <div class="contact-qr"><img src="assets/wechat_qr.jpg" alt="微信二维码"></div>
+      <div class="contact-qr"><img src="wechat_qr.jpg" alt="微信二维码"></div>
       <div class="contact-title">微信扫码添加</div>
       <div class="contact-desc">扫描上方二维码，或搜索微信号添加好友</div>
     </div>
@@ -549,7 +549,7 @@ function initVideos(){
         <div class="portfolio-desc">${v.desc}</div>
       </div>`;
     const thumb=card.querySelector('.portfolio-thumb');
-    lazyImg(thumb,`assets/posters/${v.poster}`,v.title);
+    lazyImg(thumb,`posters/${v.poster}`,v.title);
     card.addEventListener('click',()=>openVideoModal(v));
     grid.appendChild(card);
   });
@@ -567,7 +567,7 @@ function initXHS(){
   const titles=['封面 · 日式装修实景','设计概念','玄关设计','客厅空间','餐厨区域','卧室空间','储物方案','卫生间设计','细节展示'];
   for(let i=1;i<=9;i++){
     const num=String(i).padStart(2,'0');
-    const src=`assets/xhs/xhs-${num}.png`;
+    const src=`xhs/xhs-${num}.png`;
     lightboxImages.push(src);
     const item=document.createElement('div');
     item.className='xhs-item';
@@ -582,7 +582,7 @@ function initXHS(){
 function initWeChat(){
   const c=document.getElementById('wechatPages');
   for(let i=1;i<=4;i++){
-    const src=`assets/wechat/wechat_page_${i}.png`;
+    const src=`wechat/wechat_page_${i}.png`;
     lightboxImages.push(src);
     const p=document.createElement('div');
     p.className='wechat-page';
@@ -596,7 +596,7 @@ function initWeChat(){
 
 function openVideoModal(v){
   const m=document.getElementById('videoModal'),vid=document.getElementById('modalVideo'),t=document.getElementById('modalTitle');
-  vid.src=`assets/videos/${v.file}`;
+  vid.src=`${v.file}`;
   t.textContent=`${v.title} · ${v.industry}`;
   m.classList.add('active');
   vid.play().catch(()=>{});
